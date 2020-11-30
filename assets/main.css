@@ -1,0 +1,294 @@
+:root{
+    --redColor:#F92645;
+    --blueColor: #0493d1;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Nunito,sans-serif;
+}
+#accentColor{
+    color:black;
+}
+body{
+    position:relative;
+    max-width: 2550px;
+    margin:auto;
+    /* background-color: whitesmoke; */
+}
+.backgroundLogin,.backgroundSignUp{
+    position:absolute;
+    width:100%;
+    height:100vh;
+    background-color: var(--blueColor);
+    /* background-color: #F92645; */
+    z-index:-2;
+    /*  */
+
+}
+.backgroundLogin{
+    clip-path: circle(50% at 8% 15%);
+    animation: login-animation 1.5s ease;
+
+}
+.backgroundSignUp{
+    clip-path:circle(50% at 92% 15%);
+    animation: signUp-animation 1.5s ease;
+}
+main{
+    position: relative;
+}
+.loginPage, .signUpPage{
+    height:100vh;
+    width:100%;
+    display: flex;
+    position: absolute;
+    transition:.2s;
+}
+.blur{
+    animation: blur 1.2s linear;
+
+}
+.hiddenPage{
+    /* animation: breathe 2s linear; */
+    /* width:0; */
+    /* height:0; */
+    /* overflow: hidden; */
+    opacity:0;
+    pointer-events: none;
+    /* animation: blur .5s linear; */
+
+}
+.loginImage, .signUpImage{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.loginImage>p,.signUpImage>p{
+    text-align: center;
+    color:white;
+    font-size: 20px;
+}
+.loginImage>img ,.signUpImage>img{
+    /* position:absolute; */
+    height:20vw;
+    max-height:400px;
+    /* left:15vw; */
+    /* top:50vh; */
+    /* transform: translateY(-50%); */
+}
+.signUpButton,.loginButton{
+    display: block;
+    margin:1rem;
+    margin-left:auto;
+    padding:.5rem 1.5rem;
+    font-size: 1.2rem;
+    border:none;
+    background-color: var(--redColor);
+    border-radius: .5rem;
+    color:white;
+    cursor: pointer;
+}
+.loginForm,.signUpForm{
+    /* position:absolute; */
+    /* width:50vw; */
+    width:50%;
+    height:100%;
+    /* max-width: 50ch; */
+    margin-left:auto;
+    display:flex;
+    align-items: center;
+    /* display: block; */
+    /* margin-top: 50vh; */
+    /* transform:translateY(-50%); */
+
+}
+fieldset{
+    width:90vw;
+    max-width:45ch;
+    margin:auto;
+    border:none;
+    /* background-color: var(--redColor); */
+}
+legend{
+    margin:auto;
+    font-size: 1.2rem;
+}
+fieldset>div{
+    position:relative;
+}
+fieldset>div>i{
+    position:absolute;
+    left:2.5rem;
+    top:1rem;
+    font-size: 1.4rem;
+    /* color:var(--redColor); */
+}
+input{
+    width:90%;
+    display: block;
+    margin:auto;
+    padding:.8rem;
+    padding-left:3rem;
+    margin-top:1rem;
+    border-radius:2rem;
+    outline:none;
+    font-size: 1.2rem;
+    border: none;
+    /* box-shadow:5px 5px 10px rgb(235, 235, 235); */
+    background-color: rgb(236, 236, 236);
+
+}
+fieldset>button{
+    display: block;
+    margin:1rem auto;
+    padding:.5rem 1.5rem;
+    font-size: 1.2rem;
+    border:none;
+    background-color: var(--blueColor);
+    border-radius: .5rem;
+    color:white;
+    cursor: pointer;
+}
+fieldset>p{
+    /* display: block; */
+    /* width:100%; */
+    text-align: center;
+    margin-top:1.5rem;
+}
+.social{
+    display: flex;
+    justify-content: center;
+}
+.social a{
+    display: block;
+    padding:.5rem;
+    /* width:1rem; */
+}
+.social i{
+    font-size: 24px;
+    /* margin:0 2rem; */
+    padding:.5rem;
+    color:white;
+    background-color: var(--blueColor);
+    border-radius: 2rem;
+}
+
+
+@keyframes blur{
+    0%{
+        opacity:0;
+    }
+    90%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes login-animation{
+    0%{
+        clip-path: circle(50% at 92% 15%);
+
+    }
+    50%{
+        clip-path: circle(89.8% at 50% 8%);
+
+    }
+    100%{
+        clip-path: circle(50% at 8% 15%);
+
+    }
+}
+
+
+@keyframes signUp-animation{
+    0%{
+        clip-path: circle(50% at 8% 15%);
+
+    }
+    50%{
+        clip-path: circle(89.8% at 50% 8%);
+
+    }
+    100%{
+        clip-path: circle(50% at 92% 15%);
+
+    }
+}
+
+@media screen and (orientation:portrait){
+
+    .signUpPage{
+        flex-direction: column-reverse;
+    }
+    .loginPage{
+        flex-direction: column;
+    }
+    .loginForm,.signUpForm{
+        margin:auto;
+        width:100%;
+        height:70%;
+    }
+    .signUpButton, .loginButton {
+        margin:1rem auto;
+    }
+    .backgroundLogin{
+        clip-path: circle(50% at 23% 0);
+    
+    }
+    .backgroundSignUp{
+        clip-path: circle(50% at 77% 0);
+    }
+    
+
+    
+    .loginImage>img, .signUpImage>img{
+        display: none;
+    }
+    .loginImage, .signUpImage{
+        /* text-align: center; */
+        margin:auto;
+        justify-content: center;
+    }
+    
+    @keyframes login-animation{
+        0%{
+            clip-path: circle(50% at 77% 0);
+    
+        }
+        50%{
+            clip-path: circle(117.8% at 50% 48%);
+
+    
+        }
+        100%{
+            clip-path: circle(50% at 23% 0);
+
+    
+        }
+    }
+    
+    
+    @keyframes signUp-animation{
+        0%{
+            clip-path: circle(50% at 23% 0);
+
+    
+        }
+        50%{
+            clip-path: circle(117.8% at 50% 48%);
+
+    
+        }
+        100%{
+            clip-path: circle(50% at 77% 0);
+    
+        }
+    }
+
+}

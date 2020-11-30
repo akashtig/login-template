@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Template</title>
+    <link rel="stylesheet" href="./assets/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="backgroundLogin"></div>
+    <main>
+        <div class="loginPage">
+            <div class="loginImage">
+                <p>Are you are not currently a member?<br>
+                    <button class="signUpButton">Sign Up <i class="fas fa-user-plus"></i></button>
+                </p>
+                
+                <img src="./assets/login.svg" alt="login-image">
+            </div>
+            <form action="" method="POST" class="loginForm">
+                <fieldset>
+                    <legend>Login</legend>
+                    <div>
+                        <i class="fas fa-user-alt"></i>
+                        <input type="text" name="userName" >
+                    </div>
+                    <div>
+                        <i class="fas fa-unlock-alt"></i>
+                        <input type="password" name="password" >
+                    </div>
+                    <button type="submit">Submit</button>
+                    <p>
+                        Connect with us 
+                        <div class="social">
+
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-twitter"></i></a>
+                            <a href=""><i class="fab fa-facebook"></i></a>
+                        </div>
+                        
+                    </p>
+                </fieldset>
+            </form>
+        </div>
+        <div class="signUpPage hiddenPage">
+            
+            <form action="" method="POST" class="signUpForm">
+                <fieldset>
+                    <legend>SignUp</legend>
+                    <div>
+                        <i class="fas fa-user-alt"></i>
+                        <input type="text" name="userName" placeholder="FirstName">
+                    </div>
+                    <div>
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" name="email" placeholder="Email">
+                    </div>
+                    <div>
+                        <i class="fas fa-unlock-alt"></i>
+                        <input type="password" name="password" placeholder="Password">
+                    </div>
+                    <button type="submit">Submit</button>
+                    <p>
+                        Connect with us 
+                        <div class="social">
+
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-twitter"></i></a>
+                            <a href=""><i class="fab fa-facebook"></i></a>
+                        </div>
+                        
+                    </p>
+                </fieldset>
+            </form>
+            <div class="signUpImage ">
+                <p>Are you part of our family?<br>
+                    <button class="loginButton">Login</button>
+                </p>
+                
+                <img src="./assets/signUp.svg" alt="signUp-image">
+            </div>
+        </div>
+    </main>
+    <script>
+        let signUpButton=document.querySelector('.signUpButton');
+        let loginButton=document.querySelector('.loginButton');
+        let loginPage=  document.querySelector('.loginPage');
+        let signUpPage= document.querySelector('.signUpPage');
+        signUpButton.addEventListener('click',function(){
+            document.querySelector('.backgroundLogin').className="backgroundSignUp";
+            loginPage.className="loginPage hiddenPage";
+            signUpPage.className="signUpPage blur";
+            // background.setAttribute('clip-path','circle(50% at 100% 15%)');
+        });
+        loginButton.addEventListener('click',function(){
+            document.querySelector('.backgroundSignUp').className="backgroundLogin";
+            loginPage.className="loginPage blur";
+            signUpPage.className="signUpPage hiddenPage";
+            // background.setAttribute('clip-path','circle(50% at 100% 15%)');
+        })
+    </script>
+</body>
+</html>
