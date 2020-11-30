@@ -225,9 +225,11 @@ fieldset>p{
 
     .signUpPage{
         flex-direction: column-reverse;
+        height: 80vh;
     }
     .loginPage{
         flex-direction: column;
+        height: 80vh;
     }
     .loginForm,.signUpForm{
         margin:auto;
